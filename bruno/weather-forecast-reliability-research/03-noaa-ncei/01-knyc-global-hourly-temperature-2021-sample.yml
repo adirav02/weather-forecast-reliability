@@ -1,0 +1,46 @@
+info:
+  name: 01-knyc-global-hourly-temperature-2021-sample
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=USW00094728&startDate=2021-08-07T00:00:00Z&endDate=2021-08-08T23:59:59Z&dataTypes=TMP&format=json&units=metric&includeAttributes=true&includeStationName=true&includeStationLocation=true
+  params:
+    - name: dataset
+      value: global-hourly
+      type: query
+    - name: stations
+      value: USW00094728
+      type: query
+    - name: startDate
+      value: 2021-08-07T00:00:00Z
+      type: query
+    - name: endDate
+      value: 2021-08-08T23:59:59Z
+      type: query
+    - name: dataTypes
+      value: TMP
+      type: query
+    - name: format
+      value: json
+      type: query
+    - name: units
+      value: metric
+      type: query
+    - name: includeAttributes
+      value: "true"
+      type: query
+    - name: includeStationName
+      value: "true"
+      type: query
+    - name: includeStationLocation
+      value: "true"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

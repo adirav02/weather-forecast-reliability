@@ -28,13 +28,13 @@ The project compares and analyzes:
 
 * The temperature that was forecasted in advance.
 * The temperature that was actually recorded.
-* The amount of time between the publication of the forecast and the time for which it was made.
+* The forecast horizon, representing how far in advance the forecast was made relative to its target time.
 * Additional conditions that may affect forecast accuracy.
 
 The analysis is intended to support questions such as:
 
 * How accurate are weather forecasts in general?
-* Are short-range forecasts more accurate than long*range forecasts?
+* Are short-range forecasts more accurate than long-range forecasts?
 * Are there specific times or conditions in which forecasts are less reliable?
 * Do forecasts tend to predict temperatures that are higher or lower than the actual temperature?
 * Which factors are associated with larger forecast errors?
@@ -50,19 +50,23 @@ The project may be useful for:
 * Weather applications that may later display a reliability measure alongside a forecast.
 * Researchers comparing forecast performance across locations, time periods, or forecasting models.
 
-The first version is primarily a data analysis and data engineering project rather than a complete consumer*facing weather application.
+The first version is primarily a data analysis and data engineering project rather than a complete consumer-facing weather application.
 
 ## Current Scope
 
 The first version of the project will focus on:
 
-* Temperature forecasts only.
-* New York City in the United States.
-* Historical forecast data from Open*Meteo.
-* Observed temperature measurements from NOAA weather stations.
-* Comparing forecasts with measurements from the same location and target time.
-* Examining how forecast accuracy changes according to forecast horizon.
-* Using PostgreSQL and SQL for data storage, validation, matching, and analysis.
+- Temperature forecasts only.
+- New York City in the United States.
+- Historical forecast data from the Open-Meteo Previous Runs API.
+- GFS Global as the initial forecast model.
+- Hourly temperature forecasts at 2 meters.
+- Forecast horizons from 1 to 7 days.
+- Historical observed temperature data from NOAA NCEI Global Hourly.
+- KNYC — New York City, Central Park as the primary observation station.
+- Comparing forecasted temperatures with observed temperatures for corresponding target times.
+- Examining how forecast accuracy changes according to forecast horizon.
+- Using PostgreSQL and SQL for data storage, validation, matching, and analysis.
 
 ## The initial version will not include:
 
@@ -81,7 +85,7 @@ Possible future extensions include:
 * Expanding the analysis to Israel.
 * Comparing forecast accuracy between the United States and Israel.
 * Comparing different forecasting models.
-Adding variables such as rainfall, wind speed, and humidity.
+* Adding variables such as rainfall, wind speed, and humidity.
 * Automating data collection with Python.
 * Adding data-quality monitoring.
 * Building a FastAPI backend.

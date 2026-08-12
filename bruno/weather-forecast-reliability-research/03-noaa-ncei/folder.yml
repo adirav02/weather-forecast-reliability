@@ -1,0 +1,7 @@
+info:
+  name: 03-noaa-ncei
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

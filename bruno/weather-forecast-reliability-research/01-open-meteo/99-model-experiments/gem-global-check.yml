@@ -1,0 +1,34 @@
+info:
+  name: gem-global-check
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://previous-runs-api.open-meteo.com/v1/forecast?latitude=40.7143&longitude=-74.006&hourly=temperature_2m,temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7&models=cmc_gem_gdps&past_days=1&forecast_days=1
+  params:
+    - name: latitude
+      value: "40.7143"
+      type: query
+    - name: longitude
+      value: "-74.006"
+      type: query
+    - name: hourly
+      value: temperature_2m,temperature_2m_previous_day1,temperature_2m_previous_day2,temperature_2m_previous_day3,temperature_2m_previous_day4,temperature_2m_previous_day5,temperature_2m_previous_day6,temperature_2m_previous_day7
+      type: query
+    - name: models
+      value: cmc_gem_gdps
+      type: query
+    - name: past_days
+      value: "1"
+      type: query
+    - name: forecast_days
+      value: "1"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
